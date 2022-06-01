@@ -60,7 +60,7 @@ for file in files1040+files1050:
     for img in data['annotations']:
         
         for pig in img:
-            img_name = pig['fileName:'] if 'fileName:' in pig.keys() else pig['fileName']
+            img_name = pig['fileName']
             img_id = img2id[img_name]
             split = 'train' if img_name in img_train else 'test'
             if len(output[split]['images']) == 0 or img_name not in [i['file_name'] for i in output[split]['images']]:
